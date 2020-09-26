@@ -8,8 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'feed',
     pathMatch: 'full'
+  },
+  {
+    path: 'details/:id',
+    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+  },
+  {
+    path: 'feed',
+    loadChildren: () => import('./feed/feed.module').then( m => m.FeedPageModule)
   },
 ];
 
